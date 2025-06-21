@@ -1,7 +1,7 @@
 /* General body styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('AFDF6E90-36AD-47F3-BCCD-E3A034CC4C5E.jpeg'); /* Background image */
+  background-image: url('AFDF6E90-36AD-47F3-BCCD-E3A034CC4C5E.jpeg'); /* Your uploaded image */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -19,6 +19,17 @@ body {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Add sunflower icons */
+.container::after {
+  content: "🌻 🌻 🌻 🌻 🌻";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 18px;
+  opacity: 0.7;
 }
 
 /* Heading style */
@@ -59,34 +70,9 @@ textarea {
 /* Mood emojis styling */
 .mood-options {
   display: flex;
-  justify-content: space-around;
-  gap: 10px;
+  justify-content: space-between;
   margin-top: 10px;
-}
-
-.mood-options label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-}
-
-.mood-options input[type="radio"] {
-  display: none;
-}
-
-.mood-options .emoji {
-  font-size: 28px;
-  padding: 10px;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.mood-options input[type="radio"]:checked + .emoji {
-  border-color: #007bff;
-  background-color: rgba(0, 123, 255, 0.1);
+  font-size: 24px;
 }
 
 /* Submit button */
@@ -108,7 +94,7 @@ button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-/* Footer (GitHub link or credits) */
+/* Footer (GitHub link) */
 footer {
   text-align: center;
   margin-top: 25px;
