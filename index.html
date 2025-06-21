@@ -7,142 +7,104 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-image: url('0141657D-1892-4252-81C2-DF27FB1F3AEF.jpeg'); /* <-- make sure this matches your file path on GitHub */
+      background-image: url('092D91FB-7751-4282-A3D9-083C6188EF5E.jpeg');
       background-size: cover;
-      background-position: center;
       background-repeat: no-repeat;
+      background-position: center;
       margin: 0;
       padding: 0;
+      color: #004aad;
     }
 
     .container {
-      max-width: 600px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.95);
+      max-width: 500px;
+      margin: 50px auto;
       padding: 30px;
-      border-radius: 15px;
-      margin-top: 40px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
       text-align: center;
-      color: #005bbb;
-      font-size: 26px;
+      margin-bottom: 20px;
+      color: #004aad;
     }
 
     label {
       display: block;
       margin-top: 15px;
-      color: #004b99;
       font-weight: bold;
-      font-size: 16px;
     }
 
-    input, textarea, select {
+    input[type="text"],
+    textarea,
+    select {
       width: 100%;
       padding: 10px;
-      margin-top: 8px;
-      border: 1px solid #007acc;
-      border-radius: 8px;
-      background-color: #f8faff;
-      font-size: 15px;
-      color: #003d66;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
     }
 
-    textarea {
-      resize: none;
-    }
-
-    .emoji-group {
+    .mood-icons {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       margin-top: 10px;
-    }
-
-    .emoji-group input {
-      display: none;
-    }
-
-    .emoji-group label {
-      font-size: 28px;
+      font-size: 24px;
       cursor: pointer;
-      padding: 5px;
-      transition: transform 0.2s;
     }
 
-    .emoji-group input:checked + label {
-      border: 2px solid #007acc;
-      border-radius: 10px;
-      transform: scale(1.2);
-    }
-
-    button {
-      margin-top: 25px;
+    .submit-btn {
       width: 100%;
-      padding: 14px;
-      background: #007acc;
-      color: white;
-      font-weight: bold;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #007BFF;
       border: none;
-      border-radius: 10px;
-      font-size: 18px;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
       cursor: pointer;
     }
 
-    button:hover {
-      background: #005f99;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 30px;
-      color: #003d66;
-      font-size: 14px;
+    .submit-btn:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>Complaint Portal</h2>
-    <form action="https://formspree.io/f/mjkredgq" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
 
-      <label for="title">Complaint Title</label>
-      <input type="text" id="title" name="title" required />
+    <label for="name">Your Name</label>
+    <input type="text" id="name" placeholder="Enter your name" />
 
-      <label for="message">Complaint Details</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="title">Complaint Title</label>
+    <input type="text" id="title" placeholder="Enter complaint title" />
 
-      <label for="severity">Severity</label>
-      <select id="severity" name="severity">
-        <option value="Low">💚 Low</option>
-        <option value="Medium">💛 Medium</option>
-        <option value="High">❤️ High</option>
-      </select>
+    <label for="details">Complaint Details</label>
+    <textarea id="details" rows="5" placeholder="Describe your complaint"></textarea>
 
-      <label>Your Mood</label>
-      <div class="emoji-group">
-        <input type="radio" id="happy" name="mood" value="😊">
-        <label for="happy">😊</label>
-        <input type="radio" id="neutral" name="mood" value="😐">
-        <label for="neutral">😐</label>
-        <input type="radio" id="angry" name="mood" value="😠">
-        <label for="angry">😠</label>
-        <input type="radio" id="sad" name="mood" value="😢">
-        <label for="sad">😢</label>
-      </div>
+    <label for="severity">Severity</label>
+    <select id="severity">
+      <option value="low">🟢 Low</option>
+      <option value="medium">🟡 Medium</option>
+      <option value="high">🔴 High</option>
+    </select>
 
-      <label for="email">Your Email (optional)</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" />
-
-      <button type="submit">Submit Complaint</button>
-    </form>
-
-    <div class="footer">
-      Thank you for submitting your complaint.
+    <label>Your Mood</label>
+    <div class="mood-icons">
+      <span>😊</span>
+      <span>😐</span>
+      <span>😠</span>
+      <span>😭</span>
     </div>
+
+    <label for="email">Your Email (optional)</label>
+    <input type="text" id="email" placeholder="you@example.com" />
+
+    <button class="submit-btn">Submit Complaint</button>
   </div>
 </body>
 </html>
