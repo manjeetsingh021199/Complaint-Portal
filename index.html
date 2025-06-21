@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sehaj's Grievance Portal 💗</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-box">
+    <h2>Grievance Portal, mouse 💕</h2>
+    <p>As requested, you can submit your lame made-up grievances for my viewing pleasure 😌</p>
+
+    <form id="grievanceForm">
+      <input type="text" placeholder="Username" required><br>
+      <input type="password" placeholder="Password" required><br>
+      <input type="text" placeholder="Title" required><br>
+
+      <textarea placeholder="What's bothering you?" required></textarea><br>
+      
+      <label>Mood:
+        <select>
+          <option>😠 Angry</option>
+          <option>😢 Sad</option>
+          <option>😤 Frustrated</option>
+          <option>😭 Crying</option>
+          <option>😞 Disappointed</option>
+        </select>
+      </label><br>
+      
+      <label>Severity:
+        <select>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </label><br>
+
+      <button type="submit">Submit Grievance</button>
+    </form>
+
+    <p id="responseMessage" style="display:none;"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
