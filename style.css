@@ -11,11 +11,11 @@ body {
   color: #003366;
 }
 
-/* Centered container with 50% white transparency */
+/* Transparent container with 30% white background */
 .container {
   max-width: 600px;
   margin: auto;
-  background: rgba(255, 255, 255, 0.5); /* 50% transparent white */
+  background: rgba(255, 255, 255, 0.3); /* 30% transparent white */
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
