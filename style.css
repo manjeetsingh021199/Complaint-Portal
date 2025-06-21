@@ -1,61 +1,103 @@
-body {
-  background-color: #ffe6f0;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/* Reset some default styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.login-box {
-  background-color: #ffb6c1;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('092D91FB-7751-4282-A3D9-083C6188EF5E.jpeg'); /* Make sure the filename is correct */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: #0056d2; /* Blue text */
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px #ff69b4;
-  width: 320px;
-  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-input, textarea, select, button {
-  margin: 8px 0;
-  width: 90%;
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #0056d2;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
   padding: 10px;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
+  margin-bottom: 10px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background-color: #f9faff;
+  color: #0056d2;
+  font-size: 14px;
 }
 
 textarea {
   resize: vertical;
-  height: 60px;
+  min-height: 100px;
+}
+
+select {
+  background-color: #f9faff;
+}
+
+.mood-options {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding: 0 10px;
+}
+
+.mood-options span {
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mood-options span:hover {
+  transform: scale(1.2);
 }
 
 button {
-  background-color: #ff69b4;
+  background-color: #007bff;
   color: white;
   font-weight: bold;
+  padding: 12px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 button:hover {
-  background-color: #ff1493;
+  background-color: #0056b3;
 }
 
-#responseMessage {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #d6006d;
-}
-
-/* 📱 Mobile Responsive */
-@media only screen and (max-width: 500px) {
-  .login-box {
-    width: 90%;
-    padding: 20px;
-  }
-
-  input, textarea, select, button {
-    width: 100%;
-  }
+footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #333;
 }
