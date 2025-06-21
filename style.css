@@ -1,7 +1,7 @@
-/* General body styles */
+/* Body background with sunflower image */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('AFDF6E90-36AD-47F3-BCCD-E3A034CC4C5E.jpeg'); /* Background image */
+  background-image: url('AFDF6E90-36AD-47F3-BCCD-E3A034CC4C5E.jpeg'); /* Make sure this image is in the same folder */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -11,17 +11,46 @@ body {
   color: #003366;
 }
 
-/* Transparent container with 30% white background */
+/* Transparent complaint box */
 .container {
+  position: relative;
   max-width: 600px;
   margin: auto;
-  background: rgba(255, 255, 255, 0.3); /* 30% transparent white */
+  background: rgba(255, 255, 255, 0.3); /* 30% white */
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
-/* Heading style */
+/* Sunflowers */
+.container::before,
+.container::after,
+.sunflower {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sunflower_sky_backdrop.jpg/60px-Sunflower_sky_backdrop.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  content: "";
+  position: absolute;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#sf1 { top: 10px; left: 10px; }
+#sf2 { bottom: 10px; right: 10px; }
+#sf3 { top: 20px; right: 50px; }
+#sf4 { bottom: 30px; left: 30px; }
+
+/* Make sure form elements are above sunflowers */
+h1, label, input, textarea, select, button, .mood-options {
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading */
 h1 {
   text-align: center;
   color: #003366;
@@ -36,7 +65,7 @@ label {
   color: #003366;
 }
 
-/* Inputs and textarea */
+/* Inputs and Textareas */
 input[type="text"],
 input[type="email"],
 textarea,
@@ -50,18 +79,22 @@ select {
   box-sizing: border-box;
 }
 
-/* Textarea height */
 textarea {
   height: 100px;
   resize: vertical;
 }
 
-/* Mood emojis styling */
+/* Mood emojis */
 .mood-options {
   display: flex;
   justify-content: space-around;
   font-size: 24px;
   margin-top: 10px;
+  gap: 10px;
+}
+
+.mood-options label {
+  cursor: pointer;
 }
 
 /* Submit button */
@@ -83,7 +116,7 @@ button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-/* Footer (GitHub link) */
+/* Footer */
 footer {
   text-align: center;
   margin-top: 25px;
