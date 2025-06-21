@@ -2,46 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sehaj's Grievance Portal 💗</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Complaint Portal 💖</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="login-box">
-    <h2>Grievance Portal, mouse 💕</h2>
-    <p>As requested, you can submit your lame made-up grievances for my viewing pleasure 😌</p>
+  <div class="container">
+    <h1>Complaint Portal, mouse 🐭</h1>
+    <p>You can now submit your silly complaints here for Manju to see 💌</p>
 
-    <form id="grievanceForm">
-      <input type="text" placeholder="Username" required><br>
-      <input type="password" placeholder="Password" required><br>
-      <input type="text" placeholder="Title" required><br>
+    <form action="https://formsubmit.co/rathoremanjeet878@gmail.com" method="POST">
+      <!-- FormSubmit settings -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://manjeetsingh021199.github.io/Complaint-Portal/thankyou.html">
 
-      <textarea placeholder="What's bothering you?" required></textarea><br>
-      
-      <label>Mood:
-        <select>
-          <option>😠 Angry</option>
-          <option>😢 Sad</option>
-          <option>😤 Frustrated</option>
-          <option>😭 Crying</option>
-          <option>😞 Disappointed</option>
-        </select>
-      </label><br>
-      
-      <label>Severity:
-        <select>
-          <option>Low</option>
-          <option>Medium</option>
-          <option>High</option>
-        </select>
-      </label><br>
+      <!-- Form fields -->
+      <input type="text" name="title" placeholder="Title of Complaint" required />
+      <textarea name="message" placeholder="What's bothering you?" required></textarea>
 
-      <button type="submit">Submit Grievance</button>
+      <label for="mood">Mood:</label>
+      <select name="mood" id="mood">
+        <option value="angry">😡 Angry</option>
+        <option value="sad">😢 Sad</option>
+        <option value="annoyed">😒 Annoyed</option>
+        <option value="crying">😭 Crying</option>
+        <option value="confused">😕 Confused</option>
+      </select>
+
+      <label for="severity">Severity (1-10):</label>
+      <input type="range" name="severity" min="1" max="10" />
+
+      <button type="submit">Submit Complaint</button>
     </form>
-
-    <p id="responseMessage" style="display:none;"></p>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
