@@ -1,0 +1,61 @@
+body {
+  background-color: #ffe6f0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-box {
+  background-color: #ffb6c1;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #ff69b4;
+  width: 320px;
+  text-align: center;
+}
+
+input, textarea, select, button {
+  margin: 8px 0;
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  height: 60px;
+}
+
+button {
+  background-color: #ff69b4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+#responseMessage {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #d6006d;
+}
+
+/* 📱 Mobile Responsive */
+@media only screen and (max-width: 500px) {
+  .login-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  input, textarea, select, button {
+    width: 100%;
+  }
+}
