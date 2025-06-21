@@ -1,53 +1,59 @@
 /* General body styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('AFDF6E90-36AD-47F3-BCCD-E3A034CC4C5E.jpeg'); /* Your uploaded image */
+  background: linear-gradient(to bottom right, #d0f0fd, #ffffff);
+  background-image: url('AFDF6E90-36AD-47F3-BCCD-E3A034CC4C5E.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   margin: 0;
   padding: 20px;
-  color: #003366;
+  color: #002244;
 }
 
-/* Transparent container with 30% white background */
+/* Stylish container */
 .container {
-  max-width: 600px;
+  max-width: 650px;
   margin: auto;
-  background: rgba(255, 255, 255, 0.3); /* 30% transparent white */
+  background: rgba(255, 255, 255, 0.35);
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  border: 3px solid;
+  border-image: linear-gradient(to right, #1e90ff, #00c3ff, #1e90ff);
+  border-image-slice: 1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   position: relative;
+  backdrop-filter: blur(5px);
 }
 
-/* Add sunflower icons */
+/* Sunflowers */
 .container::after {
   content: "🌻 🌻 🌻 🌻 🌻";
   position: absolute;
   bottom: 10px;
-  right: 10px;
-  font-size: 18px;
+  right: 15px;
+  font-size: 20px;
   opacity: 0.7;
 }
 
-/* Heading style */
+/* Header */
 h1 {
   text-align: center;
-  color: #003366;
+  color: #004080;
   margin-bottom: 25px;
+  font-size: 28px;
 }
 
-/* Labels */
+/* Label styles */
 label {
   display: block;
   margin-top: 15px;
-  font-weight: bold;
+  font-weight: 600;
   color: #003366;
 }
 
-/* Inputs and textarea */
+/* Inputs and selects */
 input[type="text"],
 input[type="email"],
 textarea,
@@ -55,46 +61,74 @@ select {
   width: 100%;
   padding: 10px;
   margin-top: 6px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
   box-sizing: border-box;
+  transition: 0.3s ease;
 }
 
-/* Textarea height */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #00bfff;
+  outline: none;
+  background-color: #f0faff;
+}
+
+/* Textarea */
 textarea {
   height: 100px;
   resize: vertical;
 }
 
-/* Mood emojis styling */
+/* Mood emojis */
 .mood-options {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
-  font-size: 24px;
+  margin-top: 12px;
+  font-size: 28px;
 }
 
-/* Submit button */
+.mood-options input[type="radio"] {
+  display: none;
+}
+
+.mood-options label {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mood-options label:hover {
+  transform: scale(1.2);
+}
+
+.mood-options input[type="radio"]:checked + span {
+  border-bottom: 3px solid #1e90ff;
+}
+
+/* Button */
 button[type="submit"] {
   width: 100%;
-  padding: 12px;
-  background-color: #007bff;
+  padding: 14px;
+  background: linear-gradient(to right, #00bfff, #1e90ff);
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bold;
   margin-top: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+  transition: 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background: linear-gradient(to right, #1e90ff, #00bfff);
+  transform: scale(1.02);
 }
 
-/* Footer (GitHub link) */
+/* Footer */
 footer {
   text-align: center;
   margin-top: 25px;
