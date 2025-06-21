@@ -6,23 +6,28 @@
   <title>Complaint Portal</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-image: url('092D91FB-7751-4282-A3D9-083C6188EF5E.jpeg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
       margin: 0;
       padding: 0;
       color: #004aad;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .container {
-      background-color: rgba(255, 255, 255, 0.95);
-      max-width: 500px;
-      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      width: 90%;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
 
     h2 {
@@ -38,14 +43,20 @@
     }
 
     input[type="text"],
+    input[type="email"],
     textarea,
     select {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
-      border-radius: 5px;
+      border-radius: 6px;
       border: 1px solid #ccc;
       box-sizing: border-box;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
     }
 
     .mood-icons {
@@ -53,7 +64,14 @@
       justify-content: space-between;
       margin-top: 10px;
       font-size: 24px;
+    }
+
+    .mood-icons label {
       cursor: pointer;
+    }
+
+    .mood-icons input[type="radio"] {
+      margin-right: 6px;
     }
 
     .submit-btn {
@@ -62,7 +80,7 @@
       margin-top: 20px;
       background-color: #007BFF;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       color: white;
       font-size: 16px;
       cursor: pointer;
@@ -71,40 +89,52 @@
     .submit-btn:hover {
       background-color: #0056b3;
     }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #003366;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>Complaint Portal</h2>
+    <form action="https://formspree.io/f/mjkredgq" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
-    <label for="name">Your Name</label>
-    <input type="text" id="name" placeholder="Enter your name" />
+      <label for="title">Complaint Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter complaint title" required />
 
-    <label for="title">Complaint Title</label>
-    <input type="text" id="title" placeholder="Enter complaint title" />
+      <label for="details">Complaint Details</label>
+      <textarea id="details" name="details" rows="5" placeholder="Describe your complaint" required></textarea>
 
-    <label for="details">Complaint Details</label>
-    <textarea id="details" rows="5" placeholder="Describe your complaint"></textarea>
+      <label for="severity">Severity</label>
+      <select id="severity" name="severity" required>
+        <option value="low">🟢 Low</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="high">🔴 High</option>
+      </select>
 
-    <label for="severity">Severity</label>
-    <select id="severity">
-      <option value="low">🟢 Low</option>
-      <option value="medium">🟡 Medium</option>
-      <option value="high">🔴 High</option>
-    </select>
+      <label>Your Mood</label>
+      <div class="mood-icons">
+        <label><input type="radio" name="mood" value="happy" required /> 😊</label>
+        <label><input type="radio" name="mood" value="neutral" /> 😐</label>
+        <label><input type="radio" name="mood" value="angry" /> 😠</label>
+        <label><input type="radio" name="mood" value="sad" /> 😭</label>
+      </div>
 
-    <label>Your Mood</label>
-    <div class="mood-icons">
-      <span>😊</span>
-      <span>😐</span>
-      <span>😠</span>
-      <span>😭</span>
-    </div>
+      <label for="email">Your Email (optional)</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" />
 
-    <label for="email">Your Email (optional)</label>
-    <input type="text" id="email" placeholder="you@example.com" />
+      <button class="submit-btn" type="submit">Submit Complaint</button>
+    </form>
 
-    <button class="submit-btn">Submit Complaint</button>
+    <footer>
+      © 2025 Complaint Portal. All rights reserved.
+    </footer>
   </div>
 </body>
 </html>
