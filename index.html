@@ -1,53 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Complaint Portal</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('092D91FB-7751-4282-A3D9-083C6188EF5E.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      color: #004aad;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #004aad;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .mood-icons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <!-- 🌻 Sunflowers inside the form -->
-    <div class="sunflower" id="sf1"></div>
-    <div class="sunflower" id="sf2"></div>
-    <div class="sunflower" id="sf3"></div>
-    <div class="sunflower" id="sf4"></div>
+    <h2>Complaint Portal</h2>
 
-    <h1>Complaint Portal</h1>
-    
-    <form action="https://formspree.io/f/mjkredgq" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" name="name" required>
+    <label for="name">Your Name</label>
+    <input type="text" id="name" placeholder="Enter your name" />
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" required>
+    <label for="title">Complaint Title</label>
+    <input type="text" id="title" placeholder="Enter complaint title" />
 
-      <label for="mood">Mood:</label>
-      <div class="mood-options">
-        <label><input type="radio" name="mood" value="😊"> 😊</label>
-        <label><input type="radio" name="mood" value="😐"> 😐</label>
-        <label><input type="radio" name="mood" value="😢"> 😢</label>
-        <label><input type="radio" name="mood" value="😠"> 😠</label>
-      </div>
+    <label for="details">Complaint Details</label>
+    <textarea id="details" rows="5" placeholder="Describe your complaint"></textarea>
 
-      <label for="severity">Severity:</label>
-      <select name="severity" required>
-        <option value="">Select</option>
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-      </select>
+    <label for="severity">Severity</label>
+    <select id="severity">
+      <option value="low">🟢 Low</option>
+      <option value="medium">🟡 Medium</option>
+      <option value="high">🔴 High</option>
+    </select>
 
-      <label for="complaint">Complaint:</label>
-      <textarea name="complaint" required></textarea>
+    <label>Your Mood</label>
+    <div class="mood-icons">
+      <span>😊</span>
+      <span>😐</span>
+      <span>😠</span>
+      <span>😭</span>
+    </div>
 
-      <button type="submit">Submit</button>
-    </form>
+    <label for="email">Your Email (optional)</label>
+    <input type="text" id="email" placeholder="you@example.com" />
 
-    <footer>
-      &copy; 2025 Complaint Portal
-    </footer>
+    <button class="submit-btn">Submit Complaint</button>
   </div>
 </body>
 </html>
